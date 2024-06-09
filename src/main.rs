@@ -1,16 +1,10 @@
+fn main() {}
 
-fn main(){
+fn cannot_borrow_mut_more_than_once() {
+    let mut vec_1 = vec![1, 2, 3];
+    let ref1 = &mut vec_1;
 
-    let marks = 95;
-    let mut grade = 'N';
+    // let ref2 = &mut vec_1; -- this will be error
 
-    match marks {
-        90..=100 => grade = 'A',
-        80..=89 => grade = 'B',
-        _ => grade = 'C',
-    }
-     
-     println!("{:?}",grade);
+    println!("{:?}", ref1)
 }
-
- 
